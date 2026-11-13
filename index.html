@@ -13,8 +13,9 @@
     @keyframes orbFloat2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-35px, 25px) scale(1.08); } }
     @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #38bdf8; } 50% { transform: scale(1.35); opacity: 0.7; box-shadow: 0 0 18px #38bdf8; } }
     @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-    body {
+       body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+     background: linear-gradient(rgba(5, 8, 17, 0.35), rgba(5, 8, 17, 0.55)), url('bg.jpg') center/cover fixed no-repeat;
       background-color: #050811;
       color: #f8fafc;
       min-height: 100vh;
@@ -33,6 +34,13 @@
       background: radial-gradient(circle, rgba(99, 102, 241, 0.24), transparent 70%);
       filter: blur(70px); animation: orbFloat2 15s ease-in-out infinite;
     }
+    .orb-3 {
+      position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);
+      width: 520px; height: 520px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.16), rgba(99, 102, 241, 0.12) 45%, transparent 70%);
+      filter: blur(80px); pointer-events: none;
+    }
+
     .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; animation: fadeSlideUp 0.6s ease-out forwards; }
     .hero { padding-bottom: 32px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 28px; }
     .status-pill {
@@ -99,7 +107,7 @@
       box-shadow: 0 6px 14px rgba(56, 189, 248, 0.22);
     }
     .skill-pill.highlight { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.42); color: #bae6fd; }
-    .skill-pill.learning { background: rgba(168, 85, 247, 0.14); border-color: rgba(168, 85, 247, 0.36); color: #e9d5ff; }
+    .skill-pill.learning { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.42); color: #bae6fd; }
     .profiles-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     @media (max-width: 600px) { .profiles-list { grid-template-columns: 1fr; } h1 { font-size: 2.15rem; } }
     .profile-btn { display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; color: #ffffff; font-size: 0.92rem; font-weight: 600; }
@@ -149,6 +157,7 @@ color: #bae6fd; padding: 4px 11px; border-radius: 999px; transition: all 0.22s e
   <div class="ambient-bg">
     <div class="orb-1"></div>
     <div class="orb-2"></div>
+    <div class="orb-3"></div>
   </div>
 
   <div class="container">
