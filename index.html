@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,10 +12,9 @@
     @keyframes orbFloat1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, -30px) scale(1.1); } }
     @keyframes orbFloat2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-35px, 25px) scale(1.08); } }
     @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #38bdf8; } 50% { transform: scale(1.35); opacity: 0.7; box-shadow: 0 0 18px #38bdf8; } }
-    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-       body {
+    body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-     background: linear-gradient(rgba(5, 8, 17, 0.35), rgba(5, 8, 17, 0.55)), url('bg.jpg') center/cover fixed no-repeat;
+      background: linear-gradient(rgba(5, 8, 17, 0.38), rgba(5, 8, 17, 0.58)), url('bg.jpeg') center/cover fixed no-repeat;
       background-color: #050811;
       color: #f8fafc;
       min-height: 100vh;
@@ -26,90 +25,102 @@
     .ambient-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
     .orb-1 {
       position: absolute; top: -10%; left: 10%; width: 420px; height: 420px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.28), transparent 70%);
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent 70%);
       filter: blur(60px); animation: orbFloat1 12s ease-in-out infinite;
     }
     .orb-2 {
       position: absolute; bottom: -10%; right: 8%; width: 460px; height: 460px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.24), transparent 70%);
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.22), transparent 70%);
       filter: blur(70px); animation: orbFloat2 15s ease-in-out infinite;
     }
     .orb-3 {
-      position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);
-      width: 520px; height: 520px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(45, 212, 191, 0.16), rgba(99, 102, 241, 0.12) 45%, transparent 70%);
+      position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.14), rgba(99, 102, 241, 0.1) 45%, transparent 70%);
       filter: blur(80px); pointer-events: none;
     }
-
-    .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; animation: fadeSlideUp 0.6s ease-out forwards; }
-    .hero { padding-bottom: 32px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 28px; }
+    .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; opacity: 1; }
+    .hero { padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); margin-bottom: 26px; }
     .status-pill {
       display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.45);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, rgba(186, 230, 253, 0.1), rgba(5, 8, 17, 0.2));
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(224, 242, 254, 0.32);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.55);
       color: #e0f2fe; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
       padding: 7px 16px; border-radius: 999px; margin-bottom: 18px;
     }
     .dot { width: 7px; height: 7px; background-color: #38bdf8; border-radius: 50%; animation: pulseGlow 2.2s ease-in-out infinite; }
     h1 {
       font-size: 2.85rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;
-      background: linear-gradient(180deg, #ffffff 20%, rgba(255, 255, 255, 0.7) 100%);
+      background: linear-gradient(180deg, #ffffff 20%, rgba(255, 255, 255, 0.75) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px;
     }
-    .subtitle { color: rgba(226, 232, 240, 0.78); font-size: 1.02rem; font-weight: 400; line-height: 1.6; max-width: 650px; }
+    .subtitle { color: rgba(226, 232, 240, 0.85); font-size: 1.02rem; font-weight: 400; line-height: 1.6; max-width: 650px; }
     .bento-grid { display: flex; flex-direction: column; gap: 22px; }
     .panel {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%);
-      backdrop-filter: blur(28px) saturate(160%); -webkit-backdrop-filter: blur(28px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.14); border-top: 1px solid rgba(255, 255, 255, 0.38); border-left: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 26px; padding: 28px;
-      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.28);
+      background: linear-gradient(135deg, rgba(186, 230, 253, 0.06) 0%, rgba(5, 8, 17, 0.18) 55%, rgba(125, 211, 252, 0.04) 100%);
+      backdrop-filter: blur(10px) saturate(160%); -webkit-backdrop-filter: blur(10px) saturate(160%);
+      border: 1px solid rgba(224, 242, 254, 0.34);
+      border-radius: 28px; padding: 26px;
+      box-shadow:
+        0 22px 44px -12px rgba(0, 0, 0, 0.6),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.65),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.35);
     }
-    .section-title { font-size: 0.74rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.6px; color: rgba(226, 232, 240, 0.55); margin-bottom: 16px; }
-    .timeline, .skills-grid { display: flex; flex-direction: column; gap: 12px; }
+    .section-title { font-size: 0.74rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.6px; color: rgba(226, 232, 240, 0.65); margin-bottom: 16px; }
+    .timeline, .skills-grid { display: flex; flex-direction: column; gap: 16px; }
     .edu-box, .profile-btn, .skill-group, .achievement-box {
       display: block; text-decoration: none;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
-      border: 1px solid rgba(255, 255, 255, 0.12); border-top: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      border-radius: 18px; padding: 18px 20px;
+      background: linear-gradient(135deg, rgba(186, 230, 253, 0.05) 0%, rgba(5, 8, 17, 0.14) 60%, rgba(125, 211, 252, 0.03) 100%);
+      border: 1px solid rgba(224, 242, 254, 0.25);
+      border-radius: 20px; padding: 17px 19px;
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1.5px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.25);
       transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .edu-box:hover, .profile-btn:hover, .skill-group:hover, .achievement-box:hover {
       transform: translateY(-3px) scale(1.008);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
-      border-color: rgba(255, 255, 255, 0.35); border-top-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 16px 32px -8px rgba(56, 189, 248, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      background: linear-gradient(135deg, rgba(186, 230, 253, 0.12) 0%, rgba(5, 8, 17, 0.2) 60%, rgba(125, 211, 252, 0.08) 100%);
+      border-color: rgba(224, 242, 254, 0.48);
+      box-shadow:
+        0 16px 32px -8px rgba(56, 189, 248, 0.28),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.28);
     }
     .edu-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
     .school-name { font-size: 1.02rem; font-weight: 600; color: #ffffff; }
     .badge {
       font-size: 0.7rem; font-weight: 600; background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18); color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.24); color: #e2e8f0;
       padding: 3px 9px; border-radius: 999px; white-space: nowrap;
     }
-    .badge.active { background: rgba(56, 189, 248, 0.2); border-color: rgba(56, 189, 248, 0.45); color: #7dd3fc; }
+    .badge.active { background: rgba(56, 189, 248, 0.2); border-color: rgba(56, 189, 248, 0.48); color: #7dd3fc; }
     .degree-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-    .degree-text { font-size: 0.9rem; color: rgba(226, 232, 240, 0.72); }
+    .degree-text { font-size: 0.9rem; color: rgba(226, 232, 240, 0.78); }
     .click-hint { font-size: 0.78rem; color: #7dd3fc; font-weight: 600; opacity: 0.9; transition: all 0.2s ease; }
     .edu-box:hover .click-hint, .profile-btn:hover .click-hint { opacity: 1; transform: translateX(3px); }
-    .skill-group-title { font-size: 0.8rem; font-weight: 600; color: rgba(226, 232, 240, 0.65); margin-bottom: 10px; }
+    .skill-group-title { font-size: 0.8rem; font-weight: 600; color: rgba(226, 232, 240, 0.72); margin-bottom: 10px; }
     .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill-pill {
       font-size: 0.82rem; font-weight: 600; color: #f8fafc;
-      background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.22);
       padding: 6px 13px; border-radius: 999px; transition: all 0.22s ease;
     }
     .skill-pill:hover {
-      transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.45);
+      transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.5);
       box-shadow: 0 6px 14px rgba(56, 189, 248, 0.22);
     }
-    .skill-pill.highlight { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.42); color: #bae6fd; }
-    .skill-pill.learning { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.42); color: #bae6fd; }
-    .profiles-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (max-width: 600px) { .profiles-list { grid-template-columns: 1fr; } h1 { font-size: 2.15rem; } }
+    .skill-pill.highlight, .skill-pill.learning { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.42); color: #bae6fd; }
+    .profiles-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    @media (max-width: 600px) {
+      body { padding: 40px 16px; }
+      .panel { padding: 20px; border-radius: 24px; }
+      .profiles-list { grid-template-columns: 1fr; }
+      h1 { font-size: 2.15rem; }
+    }
     .profile-btn { display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; color: #ffffff; font-size: 0.92rem; font-weight: 600; }
     .btn-left { display: flex; align-items: center; gap: 10px; }
     .platform-dot { width: 8px; height: 8px; border-radius: 50%; }
@@ -124,11 +135,11 @@
     .modal-overlay:target { opacity: 1; pointer-events: auto; }
     .backdrop-close { position: absolute; inset: 0; cursor: default; }
     .modal-card {
-      position: relative; z-index: 2; background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(15, 23, 42, 0.85));
-      backdrop-filter: blur(32px) saturate(160%); -webkit-backdrop-filter: blur(32px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.18); border-top: 1px solid rgba(255, 255, 255, 0.45);
-      border-radius: 26px; padding: 32px 28px; max-width: 440px; width: 100%;
-      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.85), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      position: relative; z-index: 2; background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(15, 23, 42, 0.85));
+      backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 26px; padding: 28px 24px; max-width: 440px; width: 100%;
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.85), inset 0 1.5px 2px rgba(255, 255, 255, 0.45);
       transform: translateY(16px) scale(0.97); transition: transform 0.25s ease;
     }
     .modal-overlay:target .modal-card { transform: translateY(0) scale(1); }
@@ -136,22 +147,22 @@
     .modal-title { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
     .modal-sub { font-size: 0.85rem; color: #7dd3fc; font-weight: 500; }
     .close-btn {
-      text-decoration: none; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.24);
       color: #e2e8f0; width: 32px; height: 32px; border-radius: 12px; font-size: 1.2rem;
       display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;
     }
     .close-btn:hover { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
-    .modal-divider { height: 1px; background: rgba(255, 255, 255, 0.12); margin: 18px 0; }
+    .modal-divider { height: 1px; background: rgba(255, 255, 255, 0.14); margin: 18px 0; }
     .ach-header { font-size: 0.98rem; font-weight: 600; color: #ffffff; margin-bottom: 8px; }
-    .ach-desc { font-size: 0.88rem; color: rgba(226, 232, 240, 0.8); line-height: 1.55; }
-    .ach-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .ach-tag {
-      font-size: 0.72rem; font-weight: 600;
-      background: rgba(56, 189, 248, 0.18); border: 1px solid rgba(56, 189, 248, 0.4);
+    .ach-desc { font-size: 0.88rem; color: rgba(226, 232, 240, 0.82); line-height: 1.55; }
+.ach-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ach-tag {
+font-size: 0.72rem; font-weight: 600;
+background: rgba(56, 189, 248, 0.18); border: 1px solid rgba(56, 189, 248, 0.42);
 color: #bae6fd; padding: 4px 11px; border-radius: 999px; transition: all 0.22s ease;
 }
-    .ach-tag:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.75); }
-  </style>
+.ach-tag:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.75); }
+</style>
 </head>
 <body>
   <div class="ambient-bg">
@@ -168,7 +179,7 @@ color: #bae6fd; padding: 4px 11px; border-radius: 999px; transition: all 0.22s e
       </div>
       <h1>Nabhit Garg</h1>
       <p class="subtitle">
-        First-year Computer Science student at Manipal University Jaipur exploring core systems, logic, and problem-solving through C. Always eager to build, protect things, and learn new technologies.
+        First-year Computer Science student at Manipal University Jaipur exploring core systems, logic, and problem-solving through C. Always eager to build, break things, and learn new technologies.
       </p>
     </header>
 
@@ -213,8 +224,9 @@ color: #bae6fd; padding: 4px 11px; border-radius: 999px; transition: all 0.22s e
           <div class="skill-group">
             <div class="skill-group-title">Currently Learning</div>
             <div class="skill-pills">
-              <span class="skill-pill learning">C language</span>
-              <span class="skill-pill learning">Problem Solving</span>
+              <span class="skill-pill learning">HTML5</span>
+              <span class="skill-pill learning">CSS3</span>
+              <span class="skill-pill learning">Problem Solving (DSA)</span>
             </div>
           </div>
         </div>
